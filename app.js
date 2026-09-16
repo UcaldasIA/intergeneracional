@@ -132,7 +132,7 @@ async function cargarProyectos() {
                 const cardHTML = `
                     <a href="detalle.html?id=${idProyecto}" target="_blank" style="text-decoration: none; color: inherit;">
                         <div class="project-card">
-                            <img src="${proyecto.imagen}" alt="Pitch" class="project-image">
+                            <img src="${proyecto.imagen}" alt="Pitch" class="project-image" loading="lazy">
                             <div class="project-info">
                                 <h3>${proyecto.nombre}</h3>
                                 <p style="display: inline-block; background: #E0E7FF; color: var(--primary); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 10px;">
