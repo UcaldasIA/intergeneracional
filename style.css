@@ -238,6 +238,27 @@ button:hover {
     gap: 1rem;
     flex-direction: column; /* Apilados en móviles */
 }
+/* Botón Cargar Más */
+.btn-cargar-mas {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    width: auto;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+
+.btn-cargar-mas:hover {
+    background-color: var(--primary);
+    color: white;
+}
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #E5E7EB; /* Un gris muy suave y elegante */
+}
 
 /* =========================================
    MEDIA QUERIES (Para Tablets y Escritorio)
