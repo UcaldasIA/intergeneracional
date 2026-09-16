@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitrina de Emprendimientos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚀 Vitrina de Emprendimientos</h1>
+        <p>Descubre y comparte los proyectos de nuestros compañeros</p>
+    </header>
+
+    <main>
+        <!-- Formulario para subir el pitch -->
+        <section class="upload-section">
+            <h2>Publica tu Emprendimiento</h2>
+            <form id="pitch-form">
+                <div class="input-group">
+                    <input type="text" id="nombre" placeholder="Nombre completo" required>
+                    <select id="ciudad" required>
+                        <option value="" disabled selected>Ciudad de residencia...</option>
+                        <option value="">-</option>
+                        <option value="Arauca">Arauca</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                        <option value="Bogotá">Bogotá</option>
+                        <option value="Bucaramanga">Bucaramanga</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Cartagena">Cartagena</option>
+                        <option value="Cúcuta">Cúcuta</option>
+                        <option value="Florencia">Florencia</option>
+                        <option value="Ibagué">Ibagué</option>
+                        <option value="Leticia">Leticia</option>
+                        <option value="Manizales">Manizales</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Mitú">Mitú</option>
+                        <option value="Mocoa">Mocoa</option>
+                        <option value="Montería">Montería</option>
+                        <option value="Neiva">Neiva</option>
+                        <option value="Pasto">Pasto</option>
+                        <option value="Pereira">Pereira</option>
+                        <option value="Popayán">Popayán</option>
+                        <option value="Puerto Carreño">Puerto Carreño</option>
+                        <option value="Puerto Inírida">Puerto Inírida</option>
+                        <option value="Quibdó">Quibdó</option>
+                        <option value="Riohacha">Riohacha</option>
+                        <option value="San Andrés">San Andrés</option>
+                        <option value="San José del Guaviare">San José del Guaviare</option>
+                        <option value="Santa Marta">Santa Marta</option>
+                        <option value="Sincelejo">Sincelejo</option>
+                        <option value="Tunja">Tunja</option>
+                        <option value="Valledupar">Valledupar</option>
+                        <option value="Villavicencio">Villavicencio</option>
+                        <option value="Yopal">Yopal</option>
+                        <option value="Otra">Otra...</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="correo" placeholder="Correo electrónico" required>
+                    <input type="tel" id="telefono" placeholder="Teléfono / WhatsApp" required>
+                </div>
+                <div class="input-group">
+                    <select id="categoria" required>
+                        <option value="" disabled selected>Área de negocio...</option>
+                        <option value="Tecnología y Software">💻 Tecnología y Software</option>
+                        <option value="Salud y Bienestar">⚕️ Salud y Bienestar</option>
+                        <option value="Belleza y Cosmética">✨ Belleza y Cosmética</option>
+                        <option value="Alimentos y Gastronomía">🍔 Alimentos y Gastronomía</option>
+                        <option value="Moda y Gastronomía">👕 Moda y Ropa</option>
+                        <option value="Educación">📚 Educación</option>
+                        <option value="Servicios Profesionales">🤝 Servicios Profesionales</option>
+                        <option value="Otro">💡 Otro</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <textarea id="descripcion"
+                        placeholder="Describe tu emprendimiento (¿Qué haces? ¿Qué problema resuelves?)" rows="4"
+                        required></textarea>
+                </div>
+
+                <div class="file-group">
+                    <label for="imagen">Sube la imagen de tu Pitch (Max 2MB):</label>
+                    <input type="file" id="imagen" accept="image/*" required>
+                </div>
+
+                <button type="submit" id="submit-btn">Subir Proyecto</button>
+            </form>
+            <!-- Mensaje de carga -->
+            <p id="loading-msg" style="display: none;">Subiendo proyecto, por favor espera...</p>
+        </section>
+
+        <!-- Galería donde aparecerán los proyectos -->
+        <section class="gallery-section">
+            <h2>Emprendimientos de la Clase</h2>
+            <!-- Barra de Filtros (Reemplaza la tuya por esta) -->
+            <div class="filter-section">
+                <div class="filter-container">
+                    <select id="filtro-ciudad">
+                        <option value="Todas">🌍 Todas las ciudades</option>
+                        <option value="Arauca">Arauca</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                        <option value="Bogotá">Bogotá</option>
+                        <option value="Bucaramanga">Bucaramanga</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Cartagena">Cartagena</option>
+                        <option value="Cúcuta">Cúcuta</option>
+                        <option value="Florencia">Florencia</option>
+                        <option value="Ibagué">Ibagué</option>
+                        <option value="Leticia">Leticia</option>
+                        <option value="Manizales">Manizales</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Mitú">Mitú</option>
+                        <option value="Mocoa">Mocoa</option>
+                        <option value="Montería">Montería</option>
+                        <option value="Neiva">Neiva</option>
+                        <option value="Pasto">Pasto</option>
+                        <option value="Pereira">Pereira</option>
+                        <option value="Popayán">Popayán</option>
+                        <option value="Puerto Carreño">Puerto Carreño</option>
+                        <option value="Puerto Inírida">Puerto Inírida</option>
+                        <option value="Quibdó">Quibdó</option>
+                        <option value="Riohacha">Riohacha</option>
+                        <option value="San Andrés">San Andrés</option>
+                        <option value="San José del Guaviare">San José del Guaviare</option>
+                        <option value="Santa Marta">Santa Marta</option>
+                        <option value="Sincelejo">Sincelejo</option>
+                        <option value="Tunja">Tunja</option>
+                        <option value="Valledupar">Valledupar</option>
+                        <option value="Villavicencio">Villavicencio</option>
+                        <option value="Yopal">Yopal</option>
+                        <option value="Otra">Otra...</option>
+                    </select>
+
+                    <select id="filtro-categoria">
+                        <option value="Todas">📦 Todas las áreas</option>
+                        <option value="Tecnología y Software">💻 Tecnología y Software</option>
+                        <option value="Salud y Bienestar">⚕️ Salud y Bienestar</option>
+                        <option value="Belleza y Cosmética">✨ Belleza y Cosmética</option>
+                        <option value="Alimentos y Gastronomía">🍔 Alimentos y Gastronomía</option>
+                        <option value="Moda y Ropa">👕 Moda y Ropa</option>
+                        <option value="Educación">📚 Educación</option>
+                        <option value="Servicios Profesionales">🤝 Servicios Profesionales</option>
+                        <option value="Otro">💡 Otro</option>
+                    </select>
+                </div>
+            </div>
+            <div id="projects-grid" class="grid-container">
+                <!-- Los proyectos aparecerán aquí mágicamente con JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Aquí conectaremos nuestro archivo JS -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

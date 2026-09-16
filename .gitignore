@@ -1,0 +1,8 @@
+# Archivos de Administración (Privados)
+admin.html
+admin.css
+admin.js
+
+# Opcional: Ignorar también archivos del sistema operativo (si usas Mac o Windows)
+.DS_Store
+Thumbs.db

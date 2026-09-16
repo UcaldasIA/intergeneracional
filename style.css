@@ -1,0 +1,298 @@
+/* =========================================
+   VARIABLES GLOBALES
+   ========================================= */
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --bg-color: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --border-color: #D1D5DB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* =========================================
+   ESTILOS GENERALES (Móvil Primero)
+   ========================================= */
+header {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem; /* Reducido para móviles */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.8rem; /* Más pequeño para móviles */
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* =========================================
+   FORMULARIO
+   ========================================= */
+.upload-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Apilados en móvil por defecto */
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+textarea,
+select  {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+    background-color: white;
+}
+
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.file-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+button {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* =========================================
+   GALERÍA PRINCIPAL
+   ========================================= */
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.grid-container {
+    display: grid;
+    /* Ajustado minmax a 250px para evitar que se desborde en celulares muy pequeños */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Un poco más bajo en móvil */
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   VISTA DE DETALLE (detalle.html)
+   ========================================= */
+.detalle-wrapper {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.detalle-header {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.detalle-header h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.detalle-img {
+    width: 100%;
+    height: auto; /* Permite que la imagen calcule su altura natural */
+    max-height: 500px; /* Le damos más espacio hacia abajo */
+    object-fit: contain; /* ¡Esta es la magia! Encaja la imagen completa sin recortar nada */
+    display: block;
+    background-color: #f9fafb; /* Un fondo sutil por si la imagen es muy cuadrada o rectangular */
+}
+
+.detalle-body {
+    padding: 1.5rem;
+    background: #F9FAFB;
+}
+
+.detalle-body .descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.detalle-body hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.detalle-body p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+/* Barra de Filtros */
+.filter-section {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column; /* Apilados en móviles */
+}
+
+/* =========================================
+   MEDIA QUERIES (Para Tablets y Escritorio)
+   ========================================= */
+@media (min-width: 768px) {
+    header {
+        padding: 3rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .upload-section {
+        padding: 2.5rem;
+    }
+
+    .upload-section h2 {
+        font-size: 2rem;
+    }
+    .filter-container {
+        flex-direction: row;
+    }
+
+    /* En pantallas grandes, ponemos los inputs lado a lado */
+    .input-group {
+        flex-direction: row;
+    }
+
+    .gallery-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .grid-container {
+        gap: 2rem;
+    }
+
+    .project-image {
+        height: 250px;
+    }
+
+    /* Mejoras para la vista de detalle en pantallas grandes */
+    .detalle-header {
+        padding: 2rem;
+    }
+    .detalle-header h2 {
+        font-size: 2.5rem;
+    }
+    .detalle-img {
+        max-height: 700px;
+    }
+    .detalle-body {
+        padding: 2rem;
+    }
+    .detalle-body .descripcion, .detalle-body p {
+        font-size: 1.1rem;
+    }
+}
