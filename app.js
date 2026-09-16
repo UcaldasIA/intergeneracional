@@ -152,6 +152,8 @@ async function cargarProyectos() {
         if (proyectosMostrados === 0) {
             projectsGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-muted);">No hay emprendimientos que coincidan con tu búsqueda.</p>';
         }
+        // Actualizar el número del contador en el HTML
+        document.getElementById('total-count').textContent = proyectosMostrados;
 
     } catch (error) {
         console.error("Error cargando proyectos:", error);
